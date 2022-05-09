@@ -177,7 +177,7 @@ for i in range(0, amount_of_times_for_loop):
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     smtp_server = "smtp.gmail.com"  # This is the gmail bot for the for loop
-    port = 587
+    port = 465
 
     context = ssl.create_default_context()
 
@@ -230,7 +230,7 @@ while start_while_loop == True:  # This is would would happen if you wanted an u
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     smtp_server = "smtp.gmail.com"  # This is the gmail bot for the while loop
-    port = 587
+    port = 465
 
     context = ssl.create_default_context()
 
