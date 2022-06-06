@@ -131,9 +131,6 @@ if for_while == "1" or for_while == "[1]":
         "How long do you want to wait between each message (in seconds, minimum 0.1)? ")
     sleep_wait = int(sleep_wait)
 
-if amount_of_times_for_loop < 1:
-    print("An error has occured - The minimum number you can enter is 1")
-    quit()
 
 # This is what happenes if you want an unlimited amound
 if for_while == "2" or for_while == "[2]":
@@ -185,7 +182,7 @@ for i in range(0, amount_of_times_for_loop):
     context = ssl.create_default_context()
 
     try:
-        server = smtplib.SMTP(smtp_server, port)
+        server = smtplib.SMTP(server, port)
         server.starttls()
         server.login(gmail, password)
         server.sendmail(gmail, reciever, what_to_send)
@@ -234,7 +231,7 @@ while start_while_loop == True:  # This is would would happen if you wanted an u
     context = ssl.create_default_context()
 
     try:
-        server = smtplib.SMTP(smtp_server, port)
+        server = smtplib.SMTP(server, port)
         server.starttls()
         server.login(gmail, password)
         server.sendmail(gmail, reciever, what_to_send)
