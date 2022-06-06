@@ -1,7 +1,3 @@
-# Hello this is a quick script that I made
-# Please read 'Read First' before doing anything else
-# Do not change anything unless you know what you are doing
-
 from email import message
 from multiprocessing import context
 import ssl
