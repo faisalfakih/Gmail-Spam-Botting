@@ -11,6 +11,10 @@ import time
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+port = 587
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 gmail = ""  # Here I declared a few variables for the emails
 email1 = ""
 email2 = ""
@@ -176,21 +180,17 @@ for i in range(0, amount_of_times_for_loop):
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    smtp_server = "smtp.gmail.com"  # This is the gmail bot for the for loop
-    port = 465
+    server = "smtp.gmail.com"  # This is the gmail bot for the for loop
 
     context = ssl.create_default_context()
 
     try:
         server = smtplib.SMTP(smtp_server, port)
-        server.ehlo()
-        server.starttls(context=context)
-        server.ehlo()
+        server.starttls()
         server.login(gmail, password)
+        server.sendmail(gmail, reciever, what_to_send)
     except Exception as e:
         print(e)
-    finally:
-        server.quit()
 
     print("Your messaage has been sent!")
     time.sleep(sleep_wait)
@@ -229,23 +229,17 @@ while start_while_loop == True:  # This is would would happen if you wanted an u
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    smtp_server = "smtp.gmail.com"  # This is the gmail bot for the while loop
-    port = 465
+    server = "smtp.gmail.com"  # This is the gmail bot for the while loop
 
     context = ssl.create_default_context()
 
     try:
         server = smtplib.SMTP(smtp_server, port)
-        server.ehlo()
-        server.starttls(context=context)
-        server.ehlo()
+        server.starttls()
         server.login(gmail, password)
+        server.sendmail(gmail, reciever, what_to_send)
     except Exception as e:
-        print("An error has occured")
         print(e)
-        quit
-    finally:
-        server.quit()
 
     print("Your message has been sent!")
     time.sleep(sleep_wait)
