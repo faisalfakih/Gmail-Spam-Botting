@@ -1,5 +1,3 @@
-from email import message
-from multiprocessing import context
 import ssl
 import random
 import smtplib
@@ -113,7 +111,7 @@ else:  # This is what would happen if you didnt write [1] [2] or [3]
 
 
 for_while = input(  # This is whether you want to send a limited or unlimited amound of emails
-    "Write [1] if you want to only send a limited amount of messages and write [2] if you want to write an unlimited amound of messages (it might stop if your account ran out of storage) ")
+    "Write [1] if you want to only send a limited amount of messages and write [2] if you want to write an unlimited amound of messages... ")
 
 amount_of_times_for_loop = 0
 start_while_loop = False
@@ -124,18 +122,18 @@ if for_while == "1" or for_while == "[1]":
         "How many times do you want it to repeat? ")
     amount_of_times_for_loop = int(amount_of_times_for_loop)
     sleep_wait = input(
-        "How long do you want to wait between each message (in seconds, minimum 0.1)? ")
+        "How long do you want to wait between each message (in seconds, minimum 1)? ")
     sleep_wait = int(sleep_wait)
 
 
 # This is what happenes if you want an unlimited amound
 if for_while == "2" or for_while == "[2]":
     sleep_wait = input(
-        "How long do you want to wait between each message (in seconds, minimum 0.1)? ")
+        "How long do you want to wait between each message (in seconds, minimum 1)? ")
     sleep_wait = int(sleep_wait)
     start_while_loop = True
 
-if sleep_wait < 0.1:  # This is some bug fixing
+if sleep_wait < 1:
     print("An error has occured")
     quit()
 
