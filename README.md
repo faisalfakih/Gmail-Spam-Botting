@@ -5,7 +5,6 @@ This is a simple Python script that allows you to send spam emails using Gmail a
 ## Prerequisites
 
 - Python 3.x
-- `ssl`, `random`, `smtplib`, and `time` libraries
 
 ## Setup
 
